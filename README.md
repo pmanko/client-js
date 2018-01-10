@@ -31,3 +31,44 @@ If all goes well, the client library will be available in the
 ## Usage
 
 For usage examples and further documentation, please visit http://docs.smarthealthit.org/clients/javascript/
+
+## Using Native Adapter
+
+### Building from Source
+**Under Development**
+
+### Including Static JS File
+The `fhir-client-native.js` file can be used by adding the following tags to your html document:
+```
+<script src="[path-to-js-assets]/nativeFhir.js"></script>
+<script src="[path-to-js-assets]/fhir-client-native.js"></script>
+```
+
+These two Javascript files need to be built and made available to the app.
+
+*Building `nativeFhir.js` based on instructions from https://github.com/FHIR/fhir.js#development*
+
+```
+git clone https://github.com/FHIR/fhir.js
+cd fhir.js
+npm install
+
+# build nativeFhir.js ==> dist/ folder
+npm run-script build
+
+cp ./dist/natvieFhir.js [path-to-js-assets-folder]
+```
+
+*Building `fhir-client-native.js` based on instructions from https://github.com/smart-on-fhir/client-js#building*
+
+```
+git clone https://github.com/uwcirg/client-js
+cd client-js
+npm install
+
+# Build fhir-client-native.js ==> dist/ folder
+sudo npm install -g grunt-cli
+grunt
+
+cp ./dist/fhir-client-native.js [path-to-js-assets-folder]
+```
